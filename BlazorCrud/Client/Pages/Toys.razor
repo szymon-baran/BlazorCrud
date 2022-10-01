@@ -1,0 +1,34 @@
+﻿@page "/toys"
+@inject IToyService ToyService
+
+<PageTitle>Toys</PageTitle>
+
+<h3>Toys</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Toy type</th>
+            <th>Brand name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var toy in ToyService.Toys)
+        {
+            <tr>
+                <td>@toy.Name</td>
+                <td>@toy.ToyType</td>
+                <td>@toy.Brand.Name</td>
+                <td>btns placeholder</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await ToyService.GetToysList();
+    }
+}
