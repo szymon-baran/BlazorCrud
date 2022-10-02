@@ -1,5 +1,6 @@
 ﻿@page "/toys"
 @inject IToyService ToyService
+@inject NavigationManager NavigationManager
 
 <PageTitle>Toys</PageTitle>
 
@@ -20,7 +21,9 @@
                 <td>@toy.Name</td>
                 <td>@toy.ToyType</td>
                 <td>@toy.Brand.Name</td>
-                <td>btns placeholder</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="() => ShowToy(toy.Id)"><i class="oi oi-spreadsheet"></i></button>
+                </td>
             </tr>
         }
     </tbody>
@@ -30,5 +33,10 @@
     protected override async Task OnInitializedAsync()
     {
         await ToyService.GetToysList();
+    }
+
+    void ShowToy(int id)
+    {
+        NavigationManager.NavigateTo($"toy/{id}");
     }
 }

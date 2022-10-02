@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Shared.Dictionar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.EntityFramework", "BlazorCrud.EntityFramework\BlazorCrud.EntityFramework.csproj", "{349C5934-4F35-400D-B5CA-B3653B72587E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCrud.Client.Abstraction", "BlazorCrud.Client.Abstraction\BlazorCrud.Client.Abstraction.csproj", "{4C16FDD1-3514-4BDE-9DF1-5CD96E6A2377}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Client.Abstraction", "BlazorCrud.Client.Abstraction\BlazorCrud.Client.Abstraction.csproj", "{4C16FDD1-3514-4BDE-9DF1-5CD96E6A2377}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCrud.Client.Services", "BlazorCrud.Client.Services\BlazorCrud.Client.Services.csproj", "{6F465353-E1B2-4F98-A656-B2AD31E0DABE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Client.Services", "BlazorCrud.Client.Services\BlazorCrud.Client.Services.csproj", "{6F465353-E1B2-4F98-A656-B2AD31E0DABE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,82 @@
+﻿@page "/toy"
+@page "/toy/{id:int}"
+@inject IToyService ToyService
+@inject IBrandService BrandService
+@using BlazorCrud.Shared.Domain
+
+<h3>Toy</h3>
+
+@if (Id == null)
+{
+    <PageTitle>New toy</PageTitle>
+    <h3>Add a new toy</h3>
+}
+else
+{
+    <PageTitle>Edit @toy.Name</PageTitle>
+    <h3>Edit @toy.Name</h3>
+}
+<EditForm Model="toy" OnSubmit="Submit">
+    <div>
+        <label for="name">Name</label>
+        <InputText id="name" @bind-Value="toy.Name" class="form-control"></InputText>
+    </div>
+    <div>
+        <label for="brand">Brand</label>
+        <InputSelect id="brand" @bind-Value="toy.BrandId" class="form-select">
+            @foreach (var brand in BrandService.BrandsToSelectList)
+            {
+                <option value="@brand.Key" class="btn btn-primary">@brand.Value</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <label for="toyType">Toy type</label>
+        <InputSelect id="toyType" @bind-Value="toy.ToyType" class="form-select">
+            @foreach (var toyType in ToyService.ToyTypesToSelectList)
+            {
+                <option value="@toyType.Key" class="btn btn-primary">@toyType.Value</option>
+            }
+        </InputSelect>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">@submitBtnText</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    string submitBtnText = "";
+
+    BlazorCrud.Shared.Domain.Toy toy = new()
+        {
+            Brand = new Brand()
+        };
+
+    protected async override Task OnInitializedAsync() 
+    {
+        submitBtnText = Id == null ? "Add toy" : "Edit toy";
+        await BrandService.GetBrandsToSelectList();
+        await ToyService.GetToyTypesToSelectList();
+    }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        if (Id == null)
+        {
+
+        }
+        else
+        {
+            if (Id.HasValue)
+                toy = await ToyService.GetToyDetails(Id.Value);
+        }
+    }
+
+    async Task Submit()
+    {
+        // to test: OnValidSubmit
+
+    }
+}
