@@ -1,8 +1,10 @@
 ﻿@page "/toy"
 @page "/toy/{id:int}"
+@using BlazorCrud.Client.Abstraction.Abstraction
+@using BlazorCrud.Shared.Domain
+@using BlazorCrud.Shared.Domain.Models
 @inject IToyService ToyService
 @inject IBrandService BrandService
-@using BlazorCrud.Shared.Domain
 
 <h3>Toy</h3>
 
@@ -49,7 +51,7 @@ else
 
     string submitBtnText = "";
 
-    BlazorCrud.Shared.Domain.Toy toy = new()
+        BlazorCrud.Shared.Domain.Models.Toy toy = new()
         {
             Brand = new Brand()
         };

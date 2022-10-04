@@ -1,4 +1,4 @@
-using BlazorCrud.EntityFramework;
+using BlazorCrud.Server.EntityFramework;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 

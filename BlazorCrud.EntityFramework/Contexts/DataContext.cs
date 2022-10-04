@@ -1,8 +1,10 @@
 ﻿using BlazorCrud.Shared.Dictionaries;
+using BlazorCrud.Shared.Dictionaries.Enums;
 using BlazorCrud.Shared.Domain;
+using BlazorCrud.Shared.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlazorCrud.EntityFramework
+namespace BlazorCrud.Server.EntityFramework
 {
     public class DataContext : DbContext
     {
