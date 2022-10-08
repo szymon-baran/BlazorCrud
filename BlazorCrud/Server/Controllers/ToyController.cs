@@ -1,4 +1,5 @@
-﻿using BlazorCrud.Shared.Dictionaries;
+﻿using BlazorCrud.Server.Application.Abstraction;
+using BlazorCrud.Shared.Dictionaries;
 using BlazorCrud.Shared.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,31 +12,38 @@ namespace BlazorCrud.Server.Controllers
     [ApiController]
     public class ToyController : ControllerBase
     {
-        //[HttpGet]
-        //public async Task<ActionResult<List<Toy>>> GetToysList()
-        //{
-        //    return Ok(toys);
-        //}
+        private readonly IToyService _toyService;
+        private readonly IBrandService _brandService;
 
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Toy>> GetToyDetails(int id)
-        //{
-        //    Toy toy = toys.FirstOrDefault(x => x.Id == id) ?? throw new Exception("No toy");
-        //    return Ok(toy);
-        //}
+        public ToyController(IToyService toyService,
+                             IBrandService brandService)
+        {
+            _toyService = toyService;
+            _brandService = brandService;
+        }
 
-        //[HttpGet("getBrandsToSelectList")]
-        //public async Task<Dictionary<int, string>> GetBrandsToSelectList()
-        //{
-        //    return brands.ToDictionary(x => x.Id, x => x.Name);
-        //}
+        [HttpGet]
+        public async Task<ActionResult<List<Toy>>> GetToysList()
+        {
+            return Ok(_toyService.GetToysList());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Toy>> GetToyDetails(int id)
+        {
+            return Ok(_toyService.GetToyDetails(id));
+        }
+
+        [HttpGet("getBrandsToSelectList")]
+        public async Task<ActionResult<Dictionary<int, string>>> GetBrandsToSelectList()
+        {
+            return Ok(_brandService.GetBrandsToSelectList());
+        }
 
         [HttpGet("getToyTypesToSelectList")]
-        public async Task<Dictionary<ToyType, string>> GetToyTypesToSelectList()
+        public async Task<ActionResult<Dictionary<ToyType, string>>> GetToyTypesToSelectList()
         {
-            return Enum.GetValues(typeof(ToyType))
-                .Cast<ToyType>()
-                .ToDictionary(x => x, x => x.ToString());
+            return Ok(_toyService.GetToyTypesToSelectList());
         }
     }
 }

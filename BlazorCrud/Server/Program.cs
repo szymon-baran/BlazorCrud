@@ -1,3 +1,7 @@
+using BlazorCrud.Server.Application.Abstraction;
+using BlazorCrud.Server.Application.Services;
+using BlazorCrud.Server.Data.Abstraction;
+using BlazorCrud.Server.Data.Repositories;
 using BlazorCrud.Server.EntityFramework;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MainDatabaseContext"))); 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MainDatabaseContext")));
+builder.Services.AddScoped<IToyService, ToyService>();
+builder.Services.AddScoped<IToyRepository, ToyRepository>();
+builder.Services.AddScoped<IBrandService, BrandService>();
+builder.Services.AddScoped<IBrandRepository, BrandRepository>();
 
 var app = builder.Build();
 

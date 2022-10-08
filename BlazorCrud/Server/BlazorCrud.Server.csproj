@@ -22,6 +22,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\BlazorCrud.Domain\BlazorCrud.Shared.Domain.csproj" />
+    <ProjectReference Include="..\..\BlazorCrud.Server.Application.Abstraction\BlazorCrud.Server.Application.Abstraction.csproj" />
+    <ProjectReference Include="..\..\BlazorCrud.Server.Application.Services\BlazorCrud.Server.Application.Services.csproj" />
+    <ProjectReference Include="..\..\BlazorCrud.Server.Data.Repositories\BlazorCrud.Server.Data.Repositories.csproj" />
     <ProjectReference Include="..\..\BlazorCrud.Server.EntityFramework\BlazorCrud.Server.EntityFramework.csproj" />
     <ProjectReference Include="..\Client\BlazorCrud.Client.csproj" />
     <ProjectReference Include="..\Shared\BlazorCrud.Shared.csproj" />
