@@ -1,8 +1,6 @@
 ﻿using BlazorCrud.Client.Abstraction;
 using BlazorCrud.Shared.Dictionaries;
-using BlazorCrud.Shared.Dictionaries.Enums;
 using BlazorCrud.Shared.Domain;
-using BlazorCrud.Shared.Domain.Models;
 using System.Net.Http.Json;
 
 namespace BlazorCrud.Client.Services

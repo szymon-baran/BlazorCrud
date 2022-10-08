@@ -1,5 +1,5 @@
-﻿using BlazorCrud.Shared.Dictionaries.Enums;
-using BlazorCrud.Shared.Domain.Models;
+﻿using BlazorCrud.Shared.Dictionaries;
+using BlazorCrud.Shared.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
