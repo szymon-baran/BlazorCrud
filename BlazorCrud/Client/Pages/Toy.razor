@@ -5,8 +5,6 @@
 @inject IToyService ToyService
 @inject IBrandService BrandService
 
-<h3>Toy</h3>
-
 @if (Id == null)
 {
     <PageTitle>New toy</PageTitle>
@@ -15,7 +13,7 @@
 else
 {
     <PageTitle>Edit @toy.Name</PageTitle>
-    <h3>Edit @toy.Name</h3>
+    <h3>Edit <span class="toy-name">@toy.Name</span></h3>
 }
 <EditForm Model="toy" OnSubmit="Submit">
     <div>
@@ -50,12 +48,12 @@ else
 
     string submitBtnText = "";
 
-        BlazorCrud.Shared.Domain.Toy toy = new()
+    BlazorCrud.Shared.Domain.Toy toy = new()
         {
             Brand = new Brand()
         };
 
-    protected async override Task OnInitializedAsync() 
+    protected async override Task OnInitializedAsync()
     {
         submitBtnText = Id == null ? "Add toy" : "Edit toy";
         await BrandService.GetBrandsToSelectList();
@@ -81,3 +79,9 @@ else
 
     }
 }
+
+<style>
+    .toy-name {
+        font-weight: bold;
+    }
+</style>

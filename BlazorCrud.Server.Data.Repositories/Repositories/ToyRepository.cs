@@ -1,6 +1,7 @@
 ﻿using BlazorCrud.Server.Data.Abstraction;
 using BlazorCrud.Server.EntityFramework;
 using BlazorCrud.Shared.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorCrud.Server.Data.Repositories
 {
@@ -20,7 +21,7 @@ namespace BlazorCrud.Server.Data.Repositories
 
         public List<Toy> GetToysList()
         {
-            return _context.Toys.ToList();
+            return _context.Toys.Include(x => x.Brand).ToList();
         }
 
         public Toy GetToyDetails(int id)
