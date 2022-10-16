@@ -3,29 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Server", "BlazorCrud\Server\BlazorCrud.Server.csproj", "{74B370BF-A184-45B7-8FD8-C48B7C9428CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Server", "BlazorCrud.Server\BlazorCrud.Server.csproj", "{74B370BF-A184-45B7-8FD8-C48B7C9428CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Client", "BlazorCrud\Client\BlazorCrud.Client.csproj", "{97661806-16D3-4FC8-9572-372151198110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Client", "BlazorCrud.Client\BlazorCrud.Client.csproj", "{97661806-16D3-4FC8-9572-372151198110}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Shared", "BlazorCrud\Shared\BlazorCrud.Shared.csproj", "{CFD5C41E-71BE-4CF6-8964-D23C39A1A8D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Shared.Domain", "BlazorCrud.Shared.Domain\BlazorCrud.Shared.Domain.csproj", "{D95A9722-5B09-4E23-B0E3-2C90A603898E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Shared.Domain", "BlazorCrud.Domain\BlazorCrud.Shared.Domain.csproj", "{D95A9722-5B09-4E23-B0E3-2C90A603898E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Shared.Dictionaries", "BlazorCrud.Dictionaries\BlazorCrud.Shared.Dictionaries.csproj", "{22864C75-692B-443B-8876-CC5A167502A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Shared.Dictionaries", "BlazorCrud.Shared.Dictionaries\BlazorCrud.Shared.Dictionaries.csproj", "{22864C75-692B-443B-8876-CC5A167502A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Client.Abstraction", "BlazorCrud.Client.Abstraction\BlazorCrud.Client.Abstraction.csproj", "{4C16FDD1-3514-4BDE-9DF1-5CD96E6A2377}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Client.Services", "BlazorCrud.Client.Services\BlazorCrud.Client.Services.csproj", "{6F465353-E1B2-4F98-A656-B2AD31E0DABE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCrud.Server.EntityFramework", "BlazorCrud.Server.EntityFramework\BlazorCrud.Server.EntityFramework.csproj", "{0A89E946-3336-4A2D-A2E1-8869951D0209}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Server.EntityFramework", "BlazorCrud.Server.EntityFramework\BlazorCrud.Server.EntityFramework.csproj", "{0A89E946-3336-4A2D-A2E1-8869951D0209}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCrud.Server.Application.Services", "BlazorCrud.Server.Application.Services\BlazorCrud.Server.Application.Services.csproj", "{40F9A1EB-4B40-4952-9237-91CB3DB09311}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Server.Application.Services", "BlazorCrud.Server.Application.Services\BlazorCrud.Server.Application.Services.csproj", "{40F9A1EB-4B40-4952-9237-91CB3DB09311}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCrud.Server.Application.Abstraction", "BlazorCrud.Server.Application.Abstraction\BlazorCrud.Server.Application.Abstraction.csproj", "{A12088A1-245D-45C9-97FB-359F5323A1D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Server.Application.Abstraction", "BlazorCrud.Server.Application.Abstraction\BlazorCrud.Server.Application.Abstraction.csproj", "{A12088A1-245D-45C9-97FB-359F5323A1D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCrud.Server.Data.Abstraction", "BlazorCrud.Server.Data.Abstraction\BlazorCrud.Server.Data.Abstraction.csproj", "{8AE13FAF-64A2-4D6A-9A43-C122D5880FAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Server.Data.Abstraction", "BlazorCrud.Server.Data.Abstraction\BlazorCrud.Server.Data.Abstraction.csproj", "{8AE13FAF-64A2-4D6A-9A43-C122D5880FAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCrud.Server.Data.Repositories", "BlazorCrud.Server.Data.Repositories\BlazorCrud.Server.Data.Repositories.csproj", "{8FBE358E-5BA1-41C0-97B6-63E36340B1F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Server.Data.Repositories", "BlazorCrud.Server.Data.Repositories\BlazorCrud.Server.Data.Repositories.csproj", "{8FBE358E-5BA1-41C0-97B6-63E36340B1F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{97661806-16D3-4FC8-9572-372151198110}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97661806-16D3-4FC8-9572-372151198110}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97661806-16D3-4FC8-9572-372151198110}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CFD5C41E-71BE-4CF6-8964-D23C39A1A8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFD5C41E-71BE-4CF6-8964-D23C39A1A8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFD5C41E-71BE-4CF6-8964-D23C39A1A8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFD5C41E-71BE-4CF6-8964-D23C39A1A8D4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D95A9722-5B09-4E23-B0E3-2C90A603898E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D95A9722-5B09-4E23-B0E3-2C90A603898E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D95A9722-5B09-4E23-B0E3-2C90A603898E}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorCrud.Dictionaries\BlazorCrud.Shared.Dictionaries.csproj" />
+    <ProjectReference Include="..\BlazorCrud.Shared.Dictionaries\BlazorCrud.Shared.Dictionaries.csproj" />
   </ItemGroup>
 
 </Project>

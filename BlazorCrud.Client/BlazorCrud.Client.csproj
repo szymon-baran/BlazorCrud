@@ -12,9 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BlazorCrud.Client.Abstraction\BlazorCrud.Client.Abstraction.csproj" />
-    <ProjectReference Include="..\..\BlazorCrud.Client.Services\BlazorCrud.Client.Services.csproj" />
-    <ProjectReference Include="..\Shared\BlazorCrud.Shared.csproj" />
+    <ProjectReference Include="..\BlazorCrud.Client.Abstraction\BlazorCrud.Client.Abstraction.csproj" />
+    <ProjectReference Include="..\BlazorCrud.Client.Services\BlazorCrud.Client.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
