@@ -30,6 +30,7 @@
         }
     </tbody>
 </table>
+<button class="btn btn-primary" @onclick="AddNewToy">Create a new toy</button>
 
 @code {
     protected override async Task OnInitializedAsync()
@@ -40,5 +41,10 @@
     void ShowToy(int id)
     {
         NavigationManager.NavigateTo($"toy/{id}");
+    }
+
+    void AddNewToy()
+    {
+        NavigationManager.NavigateTo("toy");
     }
 }

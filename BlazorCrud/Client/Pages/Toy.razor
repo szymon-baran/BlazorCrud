@@ -1,6 +1,7 @@
 ﻿@page "/toy"
 @page "/toy/{id:int}"
 @using BlazorCrud.Client.Abstraction
+@using BlazorCrud.Server.Application
 @using BlazorCrud.Shared.Domain
 @inject IToyService ToyService
 @inject IBrandService BrandService
@@ -41,6 +42,10 @@ else
     <br />
     <button type="submit" class="btn btn-success">@submitBtnText</button>
 </EditForm>
+@if (Id != null)
+{
+    <button class="btn btn-danger mt-1" @onclick="DeleteToy">Delete toy</button>
+}
 
 @code {
     [Parameter]
@@ -48,23 +53,22 @@ else
 
     string submitBtnText = "";
 
-    BlazorCrud.Shared.Domain.Toy toy = new()
-        {
-            Brand = new Brand()
-        };
+    ToyAddEditVM toy = new();
 
     protected async override Task OnInitializedAsync()
     {
         submitBtnText = Id == null ? "Add toy" : "Edit toy";
         await BrandService.GetBrandsToSelectList();
+        toy.BrandId ??= BrandService.BrandsToSelectList.FirstOrDefault().Key;
         await ToyService.GetToyTypesToSelectList();
+        toy.ToyType ??= ToyService.ToyTypesToSelectList.FirstOrDefault().Key;
     }
 
     protected async override Task OnParametersSetAsync()
     {
         if (Id == null)
         {
-
+            // AddForm
         }
         else
         {
@@ -76,7 +80,19 @@ else
     async Task Submit()
     {
         // to test: OnValidSubmit
+        if (Id == null)
+        {
+            await ToyService.AddToy(toy);
+        }
+        else
+        {
+            await ToyService.EditToy(toy);
+        }
+    }
 
+    async Task DeleteToy()
+    {
+        await ToyService.DeleteToy(toy.Id.HasValue ? toy.Id.Value : throw new Exception("Missing id value"));
     }
 }
 

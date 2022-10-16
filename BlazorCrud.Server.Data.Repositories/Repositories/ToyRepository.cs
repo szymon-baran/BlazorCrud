@@ -24,10 +24,31 @@ namespace BlazorCrud.Server.Data.Repositories
             return _context.Toys.Include(x => x.Brand).ToList();
         }
 
-        public Toy GetToyDetails(int id)
+        public async Task<Toy> AddToy(Toy toy)
         {
-            return _context.Toys.FirstOrDefault(x => x.Id == id) ?? throw new Exception("No toy");
+            _context.Toys.Add(toy);
+            await _context.SaveChangesAsync();
+            return toy;
+        }
 
+        public async Task<Toy> EditToy(Toy toy)
+        {
+            _context.Toys.Update(toy);
+            await _context.SaveChangesAsync();
+            return toy;
+        }
+
+        public async Task<int> DeleteToy(Toy toy)
+        {
+            int id = toy.Id;
+            _context.Toys.Remove(toy);
+            await _context.SaveChangesAsync();
+            return id;
+        }
+
+        public async Task<Toy> GetToyDetails(int id)
+        {
+            return await _context.Toys.Include(x => x.Brand).FirstOrDefaultAsync(x => x.Id == id) ?? throw new Exception("No toy");
         }
     }
 }

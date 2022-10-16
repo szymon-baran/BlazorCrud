@@ -1,4 +1,5 @@
-﻿using BlazorCrud.Server.Application.Abstraction;
+﻿using BlazorCrud.Server.Application;
+using BlazorCrud.Server.Application.Abstraction;
 using BlazorCrud.Shared.Dictionaries;
 using BlazorCrud.Shared.Domain;
 using Microsoft.AspNetCore.Http;
@@ -28,10 +29,28 @@ namespace BlazorCrud.Server.Controllers
             return Ok(_toyService.GetToysList());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Toy>> GetToyDetails(int id)
+        [HttpPost]
+        public async Task<ActionResult<Toy>> AddToy(ToyAddEditVM model)
         {
-            return Ok(_toyService.GetToyDetails(id));
+            return Ok(await _toyService.AddToy(model));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ToyAddEditVM>> GetToyDetails(int id)
+        {
+            return Ok(await _toyService.GetToyDetailsVM(id));
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<Toy>> EditToy(ToyAddEditVM model)
+        {
+            return Ok(await _toyService.EditToy(model));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<int>> DeleteToy(int id)
+        {
+            return Ok(await _toyService.DeleteToy(id));
         }
 
         [HttpGet("getBrandsToSelectList")]

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlazorCrud.Domain\BlazorCrud.Shared.Domain.csproj" />
+    <ProjectReference Include="..\BlazorCrud.Server.Application.Abstraction\BlazorCrud.Server.Application.Abstraction.csproj" />
   </ItemGroup>
 
 </Project>
